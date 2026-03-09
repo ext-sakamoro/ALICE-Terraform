@@ -2,7 +2,7 @@
 name = "alice-terraform"
 version = "1.0.0"
 edition = "2021"
-license = "MIT"
+license = "AGPL-3.0"
 authors = ["Moroya Sakamoto"]
 description = "Infrastructure as Code engine with resource graph, state management, diff/plan, apply/destroy, provider abstraction, and variable interpolation"
 
