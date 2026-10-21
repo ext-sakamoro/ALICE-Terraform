@@ -914,13 +914,13 @@ fn engine_output() {
     engine.register_provider(&provider);
 
     let mut g = ResourceGraph::new();
-    g.add(ResourceDef::new("a", "t", "p").output("ip", Value::String("10.0.0.1".to_owned())))
+    g.add(ResourceDef::new("a", "t", "p").output("ip", Value::String("192.0.2.1".to_owned())))
         .unwrap();
     engine.apply(&g).unwrap();
 
     assert_eq!(
         engine.output("a", "ip"),
-        Some(&Value::String("10.0.0.1".to_owned()))
+        Some(&Value::String("192.0.2.1".to_owned()))
     );
     assert!(engine.output("a", "missing").is_none());
     assert!(engine.output("missing", "ip").is_none());
@@ -935,7 +935,7 @@ fn engine_outputs_map() {
     let mut g = ResourceGraph::new();
     g.add(
         ResourceDef::new("a", "t", "p")
-            .output("ip", Value::String("10.0.0.1".to_owned()))
+            .output("ip", Value::String("192.0.2.1".to_owned()))
             .output("port", Value::Int(8080)),
     )
     .unwrap();
